@@ -17,7 +17,7 @@ humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, pin)
 # If this happens try again!
 if humidity is not None and temperature is not None:
     temperature = temperature * 9/5.0 + 32
-    print('\ntemperature: {0:0.1f}*F\nhumidity: {1:0.1f}%\n'.format(temperature, humidity))
+    print('temperature: {0:0.1f}*F\nhumidity: {1:0.1f}%'.format(temperature, humidity))
 else:
     print('Failed to get reading. Try again!')
     sys.exit(1)
