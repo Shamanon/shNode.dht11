@@ -23,8 +23,8 @@ else:
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, pin)
 
-# Convert the temperature to Fahrenheit.
-temperature = temperature * 9/5.0 + 32
+if humidity is not None and temperature is not None:
+	temperature = temperature * 9/5.0 + 32
 
 # Note that sometimes you won't get a reading and
 # the results will be null (because Linux can't
